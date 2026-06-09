@@ -48,11 +48,11 @@ For scripts that create resources or trigger side effects, consider idempotency.
 Commands should read naturally and not require memorization. Sensible defaults eliminate unnecessary arguments: target branch defaults to `main`, filters default to the most common case (`open` not `all`).
 
 ```bash
-# Good: Reads naturally, obvious what it does
-skill-mr-create org/project "Fix bug" --description "Details"
-
 # Bad: Requires knowing tool internals
 tool mr create --repo org/project --title "Fix bug" --description "Details" --target-branch main --yes
+
+# Good: Reads naturally, obvious what it does
+skill-mr-create org/project "Fix bug" --description "Details"
 ```
 
 **Naming convention**: Prefix scripts with skill name for global access: `{skill-name}-{resource}-{action}` (e.g., `gitlab-mr-create`, `browser-screenshot`). This prevents namespace collisions when scripts are in PATH.
@@ -78,11 +78,11 @@ script3  # returns [] (empty array)
 ```
 
 ```bash
-# Good error (JSON to stderr)
-{"error": "Invalid project format. Use: org/project"}
-
 # Bad error
 Error: something went wrong
+
+# Good error (JSON to stderr)
+{"error": "Invalid project format. Use: org/project"}
 ```
 
 ### 4. Self-Contained Scripts
