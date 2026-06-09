@@ -1,0 +1,9 @@
+{
+  "name": "skill-design-philosophy",
+  "description": "Design philosophy for creating outstanding Claude Code skills. Use when creating a new skill, improving an existing skill, or designing script interfaces.",
+  "author": {
+    "name": "Franco Gilio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/fgilio/skill-design-philosophy-skill"
+}
