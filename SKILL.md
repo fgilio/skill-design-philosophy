@@ -243,13 +243,17 @@ Principle 1 at the install boundary: the consumer runs one command, the script h
 
 ```yaml
 ---
-name: skill-name          # lowercase, hyphens only
+name: skill-name          # display label only; the directory name sets the /command
 description: >
   [What it does].
   [When to use it].
   Trigger words: [comma-separated keywords].
+user-invocable: true            # false hides it from the / menu (background knowledge)
+disable-model-invocation: false # true stops Claude loading it automatically
 ---
 ```
+
+The skill listing truncates the description at 1,536 characters. Put the key use case first.
 
 ---
 
