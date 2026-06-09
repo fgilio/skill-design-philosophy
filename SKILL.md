@@ -13,6 +13,8 @@ Philosophy and principles only. Toolchain-specific quirks and implementation det
 
 **Goal**: Create skills that eliminate errors by design. Users should never encounter tool quirks - scripts handle everything internally.
 
+**Loading economics**: the description is always in context (it is the routing layer that decides invocation), while the body loads only when the skill is used. So descriptions must be trigger-rich with the key use case first, and bodies carry deferred cost: long reference material and full examples are close to free.
+
 Official docs: https://code.claude.com/docs/en/skills.md
 
 ---
