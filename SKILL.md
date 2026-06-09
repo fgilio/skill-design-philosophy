@@ -11,7 +11,7 @@ disable-model-invocation: false
 
 Philosophy and principles only. Toolchain-specific quirks and implementation details belong in their respective skill docs (e.g., php-cli-skill-builder).
 
-**Goal**: Create skills that eliminate errors by design. Users should never encounter tool quirks - scripts handle everything internally.
+**Goal**: Create skills that eliminate errors by design. Script skills hide tool quirks behind scripts that handle everything internally. Knowledge skills encode judgment the model can't infer on its own.
 
 **Loading economics**: the description is always in context (it is the routing layer that decides invocation), while the body loads only when the skill is used. So descriptions must be trigger-rich with the key use case first, and bodies carry deferred cost: long reference material and full examples are close to free.
 
@@ -128,6 +128,18 @@ if (! $user->hasVerifiedEmail()) {
 Two exceptions:
 - Terms that are the subject of their rule stay. A rule about the word "idempotent" must name it.
 - A skill's native domain is free vocabulary. Laravel terms cost nothing in a Laravel skill.
+
+---
+
+## Knowledge Skills
+
+Not every skill wraps a tool. Knowledge skills (style guides, domain references, writing voices) ship judgment instead of scripts. Principles 5 and 6 apply in full, plus:
+
+**Rules state boundaries, examples calibrate them.** The model already holds generic best practices. What it can't infer is where your boundaries sit, and the examples are the only encoding of that. Cutting examples to save tokens regresses every rule toward the model's defaults.
+
+**Teach through contrast pairs.** A DO/DON'T or keep/cut pair pins the decision boundary a prose rule can only gesture at. The keep examples matter most: without them a prohibition gets over-applied and strips legitimate uses.
+
+**Practice what the skill preaches.** A style skill that breaks its own rules undermines them. Lint the skill against itself.
 
 ---
 
@@ -275,3 +287,10 @@ The skill listing truncates the description at 1,536 characters. Put the key use
 - [ ] Happy path works
 - [ ] Validation errors return clean JSON
 - [ ] Edge cases handled (empty results, special chars)
+
+### Knowledge Skills
+- [ ] Description is trigger-rich with the key use case first
+- [ ] Examples use universal vocabulary
+- [ ] Every rule that needs a boundary has a contrast pair
+- [ ] Atemporal: no transition language
+- [ ] The skill passes its own rules
