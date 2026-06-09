@@ -203,8 +203,8 @@ The symlink name matches the skill's `name` frontmatter, not the repo name. The 
 
 Two variants work:
 
-- **Flat**: SKILL.md at repo root, symlink → repo root. Use for pure-skill repos.
-- **Subdir**: SKILL.md inside `skill/`, symlink → `<repo>/skill`. Use when the repo also hosts a plugin marketplace, app, or other tooling.
+- **Flat**: SKILL.md at repo root, symlink → repo root. Use for symlink-only repos.
+- **Plugin layout**: SKILL.md inside `skills/<name>/`, symlink → `<repo>/skills/<name>`. Use when the repo is also distributed as a Claude Code plugin. Plugin installers discover skills under the `skills/` directory and miss a root-level SKILL.md, so plugin repos need this layout.
 
 ### Directory layout
 
