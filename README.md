@@ -2,7 +2,7 @@
 
 Design philosophy and principles for creating outstanding [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skills.
 
-Everything lives in [SKILL.md](SKILL.md): core principles, script template, project structure, and checklists.
+Everything lives in [SKILL.md](skills/skill-design-philosophy/SKILL.md): core principles, script template, project structure, and checklists.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Clone and symlink into your Claude Code skills directory:
 
 ```bash
 git clone https://github.com/fgilio/skill-design-philosophy-skill.git ~/dev/skills/skill-design-philosophy-skill
-ln -s ~/dev/skills/skill-design-philosophy-skill ~/.claude/skills/skill-design-philosophy
+ln -s ~/dev/skills/skill-design-philosophy-skill/skills/skill-design-philosophy ~/.claude/skills/skill-design-philosophy
 ```
 
 This path also works with any agent that supports the open
