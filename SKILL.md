@@ -158,11 +158,11 @@ Most APIs paginate by default. For complete results, use the tool's pagination f
 
 ### Repo layout
 
-Skills live at `~/dev/<name>-skill/` (the `-skill` suffix keeps repos scannable and unambiguous across an org). A symlink at `~/.claude/skills/<name>` makes the skill visible to Claude Code:
+Skills live at `~/dev/skills/<name>-skill/` (the `-skill` suffix keeps repos scannable and unambiguous across an org). A symlink at `~/.claude/skills/<name>` makes the skill visible to Claude Code:
 
 ```
-~/dev/gitlab-skill/SKILL.md               # source of truth
-~/.claude/skills/gitlab  -> ~/dev/gitlab-skill   # symlink (consumer-facing)
+~/dev/skills/gitlab-skill/SKILL.md               # source of truth
+~/.claude/skills/gitlab  -> ~/dev/skills/gitlab-skill   # symlink (consumer-facing)
 ```
 
 The symlink name matches the skill's `name` frontmatter, not the repo name — the consumer-facing handle (`gitlab`) stays terse while the repo carries the `-skill` suffix.

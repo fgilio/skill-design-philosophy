@@ -9,8 +9,8 @@ Everything lives in [SKILL.md](SKILL.md) - four core principles, script template
 Clone and symlink into your Claude Code skills directory:
 
 ```bash
-git clone https://github.com/fgilio/skill-design-philosophy-skill.git ~/dev/skill-design-philosophy-skill
-ln -s ~/dev/skill-design-philosophy-skill ~/.claude/skills/skill-design-philosophy
+git clone https://github.com/fgilio/skill-design-philosophy-skill.git ~/dev/skills/skill-design-philosophy-skill
+ln -s ~/dev/skills/skill-design-philosophy-skill ~/.claude/skills/skill-design-philosophy
 ```
 
 Claude Code will automatically discover the skill and use it when creating or improving skills.
