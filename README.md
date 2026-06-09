@@ -2,7 +2,7 @@
 
 Design philosophy and principles for creating outstanding [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skills.
 
-Everything lives in [SKILL.md](SKILL.md) - four core principles, script template, project structure, and checklists.
+Everything lives in [SKILL.md](SKILL.md) - core principles, script template, project structure, and checklists.
 
 ## Installation
 
