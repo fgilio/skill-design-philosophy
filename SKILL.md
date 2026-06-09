@@ -9,7 +9,7 @@ disable-model-invocation: false
 
 # Skill Design Philosophy
 
-Philosophy and principles only. Toolchain-specific quirks and implementation details belong in their respective skill docs (e.g., [php-cli-skill-builder](../php-cli-skill-builder/SKILL.md)).
+Philosophy and principles only. Toolchain-specific quirks and implementation details belong in their respective skill docs (e.g., php-cli-skill-builder).
 
 **Goal**: Create skills that eliminate errors by design. Users should never encounter tool quirks - scripts handle everything internally.
 
