@@ -25,7 +25,7 @@ Official docs: https://code.claude.com/docs/en/skills.md
 
 The skill should make it impossible to fail due to underlying tool quirks. If a CLI needs `--description` not `--body`, the script uses the right flag. If URLs need encoding, the script encodes them. Users never see the complexity.
 
-This includes validating early: check dependencies, inputs, and formats before doing any work. If an external API changed its response shape, the script should fail with a clear message - not silently produce garbage.
+This includes validating early: check dependencies, inputs, and formats before doing any work. If an external API changed its response shape, the script should fail with a clear message, not silently produce garbage.
 
 ```bash
 # Bad: User needs to know about URL encoding
@@ -45,7 +45,7 @@ For scripts that create resources or trigger side effects, consider idempotency.
 
 ### 2. Intuitive Interfaces
 
-Commands should read naturally and not require memorization. Sensible defaults eliminate unnecessary arguments - target branch defaults to `main`, filters default to the most common case (`open` not `all`).
+Commands should read naturally and not require memorization. Sensible defaults eliminate unnecessary arguments: target branch defaults to `main`, filters default to the most common case (`open` not `all`).
 
 ```bash
 # Good: Reads naturally, obvious what it does
@@ -63,7 +63,7 @@ Two rules:
 - **stdout** is for the consumer (Claude or a pipe). JSON for data operations, plain text for logs/traces.
 - **stderr** is for problems. JSON errors with exit 1. Usage help with exit 1.
 
-Never mix formats within a script. Never return nothing - use an empty JSON array if there are no results.
+Never mix formats within a script. Never return nothing. Use an empty JSON array if there are no results.
 
 ```bash
 # Bad: Inconsistent contract
@@ -89,7 +89,7 @@ Error: something went wrong
 
 Each skill is a self-contained unit. No external package dependencies, no build steps.
 
-Share code within a skill freely (e.g., a `lib.ts` for auth and validation). Never share code between skills - copy patterns instead. Each script owns its entry point with its own usage/help and argument parsing.
+Share code within a skill freely (e.g., a `lib.ts` for auth and validation). Never share code between skills, copy patterns instead. Each script owns its entry point with its own usage/help and argument parsing.
 
 ### 5. Atemporal Writing
 
@@ -199,7 +199,7 @@ Skills live at `~/dev/skills/<name>-skill/` (the `-skill` suffix keeps repos sca
 ~/.claude/skills/gitlab  -> ~/dev/skills/gitlab-skill   # symlink (consumer-facing)
 ```
 
-The symlink name matches the skill's `name` frontmatter, not the repo name — the consumer-facing handle (`gitlab`) stays terse while the repo carries the `-skill` suffix.
+The symlink name matches the skill's `name` frontmatter, not the repo name. The consumer-facing handle (`gitlab`) stays terse while the repo carries the `-skill` suffix.
 
 Two variants work:
 
