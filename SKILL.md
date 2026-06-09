@@ -131,7 +131,7 @@ Two exceptions:
 
 ## Script Template
 
-The rhythm every script follows. For a full working example, see `~/.claude/skills/gitlab/scripts/`.
+The rhythm every script follows. For a full working example, see `~/.claude/skills/browser/scripts/`.
 
 ```bash
 #!/bin/bash
