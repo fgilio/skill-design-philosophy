@@ -107,6 +107,26 @@ The script prompts interactively before destructive actions.
 
 This applies to SKILL.md, reference docs, script comments, and usage strings alike. Put transition notes in commit messages and changelogs, not in the skill itself.
 
+### 6. Universal Vocabulary in Examples
+
+Skills are read mid-task. Every example competes with whatever domain the agent currently holds (a payment flow, a migration, a UI bug). An example built on foreign concepts forces the reader to absorb vocabulary that serves neither the rule being taught nor the work in progress, and can pull attention toward the example's domain.
+
+Build examples from the stock material every tutorial shares: users, posts, tags, orders, emails, invoices. Familiar vocabulary carries near-zero novelty, so all attention lands on the lesson.
+
+Test: what does this example force the reader to know beyond the rule it teaches? If the answer names a domain (cryptography, container platforms, CI internals), recast it.
+
+```php
+// Bad: imports crypto vocabulary to teach control flow
+if (! HmacKey::isStrong($webhookKey)) {
+
+// Good: same lesson, vocabulary every reader already holds
+if (! $user->hasVerifiedEmail()) {
+```
+
+Two exceptions:
+- Terms that are the subject of their rule stay. A rule about the word "idempotent" must name it.
+- A skill's native domain is free vocabulary. Laravel terms cost nothing in a Laravel skill.
+
 ---
 
 ## Script Template
