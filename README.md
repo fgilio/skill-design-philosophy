@@ -8,8 +8,7 @@ Everything lives in [SKILL.md](skills/skill-design-philosophy/SKILL.md): core pr
 
 ### As a plugin
 
-Installs through the [fgilio marketplace](https://github.com/fgilio/claude-plugins)
-and receives updates as the skill evolves:
+Installs through the [fgilio marketplace](https://github.com/fgilio/claude-plugins) and receives updates as the skill evolves:
 
 ```
 /plugin marketplace add fgilio/claude-plugins
@@ -25,9 +24,7 @@ git clone https://github.com/fgilio/skill-design-philosophy-skill.git ~/dev/skil
 ln -s ~/dev/skills/skill-design-philosophy-skill/skills/skill-design-philosophy ~/.claude/skills/skill-design-philosophy
 ```
 
-This path also works with any agent that supports the open
-[Agent Skills](https://agentskills.io) format. Updates require a manual
-`git pull`.
+This path also works with any agent that supports the open [Agent Skills](https://agentskills.io) format. Updates require a manual `git pull`.
 
 Claude Code will automatically discover the skill and use it when creating or improving skills.
 

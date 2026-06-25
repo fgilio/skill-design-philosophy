@@ -60,6 +60,7 @@ skill-mr-create org/project "Fix bug" --description "Details"
 ### 3. Predictable Output
 
 Two rules:
+
 - **stdout** is for the consumer (Claude or a pipe). JSON for data operations, plain text for logs/traces.
 - **stderr** is for problems. JSON errors with exit 1. Usage help with exit 1.
 
@@ -126,6 +127,7 @@ if (! $user->hasVerifiedEmail()) {
 ```
 
 Two exceptions:
+
 - Terms that are the subject of their rule stay. A rule about the word "idempotent" must name it.
 - A skill's native domain is free vocabulary. Laravel terms cost nothing in a Laravel skill.
 
@@ -274,21 +276,25 @@ The skill listing truncates the description at 1,536 characters. Put the key use
 ## Checklist for New Skills
 
 ### Before Building
+
 - [ ] Identify the underlying tool's quirks and pain points
 - [ ] List common operations users need
 - [ ] Design intuitive command signatures
 
 ### Documentation
+
 - [ ] SKILL.md with clear usage examples
 - [ ] Comment in each script explaining what quirks it handles
 - [ ] `reference.md` or `references/` directory if raw API/tool docs would be useful
 
 ### Testing
+
 - [ ] Happy path works
 - [ ] Validation errors return clean JSON
 - [ ] Edge cases handled (empty results, special chars)
 
 ### Knowledge Skills
+
 - [ ] Description is trigger-rich with the key use case first
 - [ ] Examples use universal vocabulary
 - [ ] Every rule that needs a boundary has a contrast pair
