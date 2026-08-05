@@ -157,6 +157,10 @@ Not every skill wraps a tool. Knowledge skills (style guides, domain references,
 
 **Teach through contrast pairs.** A DO/DON'T or keep/cut pair pins the decision boundary a prose rule can only gesture at. The keep examples matter most: without them a prohibition gets over-applied and strips legitimate uses.
 
+**Give the core rule a handle.** A compact phrase, either pretrained ("tracer bullet", "idempotent") or coined for the skill ("precise but generic"), packs the whole behavior into a term the reader thinks with. Anchor it twice: in the description, where it routes invocation, and in the body, where it governs execution. The same test as any detail applies: when a paraphrase changes nothing about what the reader does, the handle is decoration.
+
+**Steps that demand evidence get done.** In a procedural skill, a step whose output is unobservable gets skimmed under load. Make each step produce a named artifact: a ratio, a list of surfaces checked, a verdict per item. The artifact is the completion criterion, so a reader cannot report the step done without doing the work.
+
 **Practice what the skill preaches.** A style skill that breaks its own rules undermines them. Lint the skill against itself.
 
 **Calibrate at the capability floor.** Docs serve the weakest model that will read them, not the one that wrote them. When judging whether a rule or example earns its place, ask an independent low-effort agent whether the block changes its output; the author's own model is the wrong judge, because what it infers for free a weaker reader may not.
@@ -316,5 +320,7 @@ The skill listing truncates the description at 1,536 characters. Put the key use
 - [ ] Description is trigger-rich with the key use case first
 - [ ] Precise but generic: every remaining specific detail changes reader behavior
 - [ ] Every rule that needs a boundary has a contrast pair
+- [ ] The core rule has a handle that appears in both description and body
+- [ ] Every procedural step names the artifact it produces
 - [ ] Atemporal: no transition language
 - [ ] The skill passes its own rules
