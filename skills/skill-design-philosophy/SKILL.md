@@ -131,6 +131,22 @@ Two exceptions:
 - Terms that are the subject of their rule stay. A rule about the word "idempotent" must name it.
 - A skill's native domain is free vocabulary. Laravel terms cost nothing in a Laravel skill.
 
+### 7. Descriptions Are Read-Triggers
+
+The description routes; the body teaches. A description that summarizes the body's mechanics loads that vocabulary into every session, which defeats the deferral the body exists for. The same rule governs any resident pointer to deferred content: a CLAUDE.md line referencing a doc carries the trigger (when to read) and the path, never a summary of what the doc contains.
+
+Test: does this phrase help decide WHEN to invoke or read (routing key: keep) or does it describe what the reader WILL LEARN inside (content summary: cut)?
+
+```yaml
+# Bad: content summary — the body's mechanics leak into every session
+description: Reviews code through three personas across report, address, and comment modes, scoring each file on twelve dimensions.
+
+# Good: trigger + routing keys
+description: Audit code against the team's standards in one pass. Use when reviewing a PR, a branch, or pending changes.
+```
+
+Two things stay in the description even though they describe behavior: safety properties ("never mutates remote state") and precedence clauses ("OVERRIDES the global skill"). They change the invocation decision itself, which makes them routing. Mode lists belong in `argument-hint`, not the description.
+
 ---
 
 ## Knowledge Skills
@@ -142,6 +158,8 @@ Not every skill wraps a tool. Knowledge skills (style guides, domain references,
 **Teach through contrast pairs.** A DO/DON'T or keep/cut pair pins the decision boundary a prose rule can only gesture at. The keep examples matter most: without them a prohibition gets over-applied and strips legitimate uses.
 
 **Practice what the skill preaches.** A style skill that breaks its own rules undermines them. Lint the skill against itself.
+
+**Calibrate at the capability floor.** Docs serve the weakest model that will read them, not the one that wrote them. When judging whether a rule or example earns its place, ask an independent low-effort agent whether the block changes its output; the author's own model is the wrong judge, because what it infers for free a weaker reader may not.
 
 ---
 
