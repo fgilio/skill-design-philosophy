@@ -110,13 +110,13 @@ The script prompts interactively before destructive actions.
 
 This applies to SKILL.md, reference docs, script comments, and usage strings alike. Put transition notes in commit messages and changelogs, not in the skill itself.
 
-### 6. Universal Vocabulary in Examples
+### 6. Precise but Generic
 
-Skills are read mid-task. Every example competes with whatever domain the agent currently holds (a payment flow, a migration, a UI bug). An example built on foreign concepts forces the reader to absorb vocabulary that serves neither the rule being taught nor the work in progress, and can pull attention toward the example's domain.
+Every concrete detail in a rule or example is either load-bearing or a liability. Precise means the load-bearing specifics stay exact: the boundary the rule pins, the identifier typed verbatim, the command that must not change. Generic means nothing else is specific: no incidental domain vocabulary, no names the lesson does not need. Generic never means vague. A line with no load-bearing specifics teaches nothing and fails the opposite way.
 
-Build examples from the stock material every tutorial shares: users, posts, tags, orders, emails, invoices. Familiar vocabulary carries near-zero novelty, so all attention lands on the lesson.
+Test each detail: does generalizing it change what the reader does? If yes, it is the precision, keep it exact (a pinned version stays when the rule depends on it). If no, it is a liability that taxes attention, narrows perceived scope, or drifts out of date.
 
-Test: what does this example force the reader to know beyond the rule it teaches? If the answer names a domain (cryptography, container platforms, CI internals), recast it.
+**Build examples from the stock material every tutorial shares: users, posts, tags, orders, emails, invoices.** Skills are read mid-task, so every example competes with whatever domain the agent currently holds (a payment flow, a migration, a UI bug). An example built on foreign concepts forces the reader to absorb vocabulary that serves neither the rule being taught nor the work in progress. Familiar vocabulary carries near-zero novelty, so all attention lands on the lesson.
 
 ```php
 // Bad: imports crypto vocabulary to teach control flow
@@ -129,11 +129,11 @@ if (! $user->hasVerifiedEmail()) {
 Two exceptions:
 
 - Terms that are the subject of their rule stay. A rule about the word "idempotent" must name it.
-- A skill's native domain is free vocabulary. Laravel terms cost nothing in a Laravel skill.
+- The skill's declared domain is free vocabulary. Laravel terms cost nothing in a Laravel skill. Declared means the skill's own subject, not whichever repo the session happens to sit in.
 
 ### 7. Descriptions Are Read-Triggers
 
-The description routes; the body teaches. A description that summarizes the body's mechanics loads that vocabulary into every session, which defeats the deferral the body exists for. The same rule governs any resident pointer to deferred content: a CLAUDE.md line referencing a doc carries the trigger (when to read) and the path, never a summary of what the doc contains.
+The description routes; the body teaches. A description that summarizes the body's mechanics loads that vocabulary into every session, which defeats the deferral the body exists for. The same rule governs any resident pointer to deferred content: a CLAUDE.md line referencing a doc carries the trigger (when to read) and the path, never a summary of what the doc contains. This is principle 6 at the routing layer: precise about when to read, silent about what will be learned.
 
 Test: does this phrase help decide WHEN to invoke or read (routing key: keep) or does it describe what the reader WILL LEARN inside (content summary: cut)?
 
@@ -314,7 +314,7 @@ The skill listing truncates the description at 1,536 characters. Put the key use
 ### Knowledge Skills
 
 - [ ] Description is trigger-rich with the key use case first
-- [ ] Examples use universal vocabulary
+- [ ] Precise but generic: every remaining specific detail changes reader behavior
 - [ ] Every rule that needs a boundary has a contrast pair
 - [ ] Atemporal: no transition language
 - [ ] The skill passes its own rules
