@@ -163,7 +163,7 @@ Not every skill wraps a tool. Knowledge skills (style guides, domain references,
 
 **Practice what the skill preaches.** A style skill that breaks its own rules undermines them. Lint the skill against itself.
 
-**Calibrate at the capability floor.** Docs serve the weakest model that will read them, not the one that wrote them. When judging whether a rule or example earns its place, ask an independent low-effort agent whether the block changes its output; the author's own model is the wrong judge, because what it infers for free a weaker reader may not.
+**Calibrate at the capability floor.** Docs serve a reader that is weaker and fresher than the author: a lower-capability model in a clean context window. The author is the wrong judge on both axes, because it cannot un-know what it infers for free and cannot un-read what it just wrote. Spawn the reader instead of simulating it: give an independent low-effort agent the block and a task the block governs, never the expected answer, and let its output decide. When the verdict is load-bearing, use three agents with majority vote, and tell each to answer only and never perform the task.
 
 ---
 
