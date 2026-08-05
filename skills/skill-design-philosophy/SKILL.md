@@ -161,6 +161,8 @@ Not every skill wraps a tool. Knowledge skills (style guides, domain references,
 
 **Steps that demand evidence get done.** In a procedural skill, a step whose output is unobservable gets skimmed under load. Make each step produce a named artifact: a ratio, a list of surfaces checked, a verdict per item. The artifact is the completion criterion, so a reader cannot report the step done without doing the work.
 
+**An optional step is an unfinished trigger.** "Optionally" hands the decision to the reader's judgment, which varies with capability, so at the floor the step degrades to skipped or inconsistently applied. Every step is either gated by a condition the reader can check or absent. "Re-run the suite when any file under tests/ changed" gates. "Optionally re-run the suite" abstains.
+
 **Practice what the skill preaches.** A style skill that breaks its own rules undermines them. Lint the skill against itself.
 
 **Calibrate at the capability floor.** Docs serve a reader that is weaker and fresher than the author: a lower-capability model in a clean context window. The author is the wrong judge on both axes, because it cannot un-know what it infers for free and cannot un-read what it just wrote. Spawn the reader instead of simulating it: give an independent low-effort agent the block and a task the block governs, never the expected answer, and let its output decide. When the verdict is load-bearing, use three agents with majority vote, and tell each to answer only and never perform the task.
@@ -322,5 +324,6 @@ The skill listing truncates the description at 1,536 characters.
 - [ ] Every rule that needs a boundary has a contrast pair
 - [ ] The core rule has a handle that appears in both description and body
 - [ ] Every procedural step names the artifact it produces
+- [ ] No step is optional: each is gated by a checkable condition or absent
 - [ ] Atemporal: no transition language
 - [ ] The skill passes its own rules
