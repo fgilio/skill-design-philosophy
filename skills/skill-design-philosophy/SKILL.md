@@ -291,7 +291,7 @@ disable-model-invocation: false # true stops Claude loading it automatically
 ---
 ```
 
-The skill listing truncates the description at 1,536 characters. Put the key use case first.
+The skill listing truncates the description at 1,536 characters.
 
 ---
 
